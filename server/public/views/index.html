@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Directives Peer Project</title>
+    <link href="../assets/bootstrap.min.css">
+    <script src="../vendor/angular.min.js"></script>
+    <script src="../assets/client.js"></script>
+</head>
+<body ng-controller="MainController">
+    <h1>{{test}}</h1>
+    <h2>please enjoy shiny nice happy ng-list directive demonstrating for your viewing pleasure</h2>
+    <br>
+    <form name = "myForm">
+    <h3>Comma-delimited:</h3>
+        <div>
+        List some things: <input name="dataInput" ng-model="data" ng-list>
+    </div>
+        <br>
+    <div ng-hide="!data" class="ng-hide">
+        Data = {{data}}
+    </div>
+    </form>
+
+    <br><br>
+
+    <form name = "otherForm">
+        <h3>Splitting on newline:</h3>
+        <div>
+            List some more things: <textarea name="otherDataInput" ng-model="moreData" ng-list="&#10;" ng-trim="false"></textarea>
+        </div>
+        <br>
+        <div ng-hide="!moreData" class="ng-hide">
+            More Data = {{moreData}}
+        </div>
+    </form>
+</body>
+</html>
